@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary: #0080ff;
+  --color-primary-hover: #0070e0;
+  --color-primary-soft: #6290eb;
+  /* Backgrounds */
+  --color-bg: #0b0b0d;
+  --color-surface: #1a1b20;
+  --color-elevated: #1e1f25;
+  /* Text */
+  --color-secondary: #a5a5a5;
+  --color-tertiary: #6b6b6b;
+  /* Semantic */
+  --color-success: #00e095;
+  --color-danger: #ff3b30;
+  --color-warning: #ff9f0a;
+  /* Neutrals (design token "border" → "line" so border-* width utilities stay intact) */
+  --color-line: #2c2c2e;
+  --color-divider: #2a2a2c;
+  --color-muted: #8e8e93;
+  /* Crypto brand colors */
+  --color-btc: #f7931a;
+  --color-eth: #627eea;
+  --color-usdt: #26a17b;
+  --color-sol: #9945ff;
+  --color-bnb: #f3ba2f;
+  --color-link: #2a5ada;
+  --color-ada: #0033ad;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg font-sans text-white antialiased;
+  }
+  ::placeholder {
+    color: var(--color-secondary);
+    opacity: 1;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  input:focus-visible {
+    outline: none; /* inputs signal focus with a primary border instead */
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
