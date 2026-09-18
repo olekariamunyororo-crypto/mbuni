@@ -55,7 +55,7 @@ export function AssetRow({ symbol, name, price, change24h = 0, amount, usd, spar
             starred ? "text-warning" : "text-tertiary hover:text-secondary",
           )}
         >
-          <Star size={17} fill={starred ? "currentColor" : "none" />
+          <Star size={17} fill={starred ? "currentColor" : "none"} />
         </button>
       )}
     </div>
